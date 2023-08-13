@@ -5,3 +5,13 @@
 название начинается не с буквы 'Т';
 название состоит ровно из 12 символов.
 Оставьте только топ-7 фильмов, отсортированных по рейтингу
+
+SELECT
+    movie_title,
+    director,
+    screenwriter,
+    actors
+FROM sql.kinopoisk
+WHERE (rating between 8.0 and 8.5 or year < 1990) and overview is not null and movie_title not like 'Т%' and movie_title like '____________'
+ORDER BY rating deSC
+LIMIT 7 
